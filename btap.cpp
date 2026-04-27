@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// ====== CẤU TRÚC ======
 struct Ngay {
     int ngay, thang, nam;
 };
@@ -27,22 +26,19 @@ struct List {
     struct Node* head;
 };
 
-// ====== KHỞI TẠO ======
 void init(struct List* L) {
     L->head = NULL;
 }
 
-// ====== XÓA \n ======
 void xoaXuongDong(char* s) {
     s[strcspn(s, "\n")] = '\0';
 }
 
-// ====== SO SÁNH NGÀY ======
 int cungNgay(struct Ngay a, struct Ngay b) {
     return (a.ngay == b.ngay && a.thang == b.thang && a.nam == b.nam);
 }
 
-// ====== NHẬP SINH VIÊN ======
+
 struct SinhVien nhapSV() {
     struct SinhVien sv;
 
@@ -79,7 +75,7 @@ struct SinhVien nhapSV() {
     return sv;
 }
 
-// ====== THÊM CÓ SẮP XẾP ======
+
 void insertSorted(struct List* L, struct SinhVien sv) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
 
@@ -108,7 +104,7 @@ void insertSorted(struct List* L, struct SinhVien sv) {
     p->next = newNode;
 }
 
-// ====== IN DANH SÁCH ======
+
 void inDS(struct List L) {
     struct Node* p = L.head;
     while (p != NULL) {
@@ -117,7 +113,7 @@ void inDS(struct List L) {
     }
 }
 
-// ====== IN SV TRÙNG NGÀY SINH ======
+
 void inTrungNgay(struct List L) {
     struct Node* p = L.head;
     int found = 0;
@@ -139,7 +135,6 @@ void inTrungNgay(struct List L) {
         printf("Khong co SV trung ngay sinh\n");
 }
 
-// ====== XÓA SV TRÙNG NGÀY SINH (giữ lại 1) ======
 void xoaTrungNgay(struct List* L) {
     struct Node* p = L->head;
 
@@ -162,7 +157,7 @@ void xoaTrungNgay(struct List* L) {
     }
 }
 
-// ====== MAIN ======
+
 int main() {
     struct List ds;
     init(&ds);
@@ -189,3 +184,40 @@ int main() {
 
     return 0;
 }
+// test case: 
+// 5
+// SV003
+// Nguyen Van A
+// 1
+// 1 1 2000
+// Ha Noi
+// CNTT1
+// K63
+// SV001
+// Tran Thi B
+// 0
+// 2 2 2001
+// Hai Phong
+// CNTT2
+// K63
+// SV005
+// Le Van C
+// 1
+// 1 1 2000
+// Da Nang
+// CNTT1
+// K62
+// SV002
+// Pham Thi D
+// 0
+// 3 3 2002
+// Hue
+// CNTT3
+// K64
+// SV004
+// Hoang Van E
+// 1
+// 2 2 2001
+// HCM
+// CNTT2
+// K63
