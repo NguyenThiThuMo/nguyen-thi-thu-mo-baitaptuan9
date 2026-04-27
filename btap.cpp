@@ -184,40 +184,27 @@ int main() {
 
     return 0;
 }
-// test case: 
-// 5
-// SV003
-// Nguyen Van A
-// 1
-// 1 1 2000
-// Ha Noi
-// CNTT1
-// K63
-// SV001
-// Tran Thi B
-// 0
-// 2 2 2001
-// Hai Phong
-// CNTT2
-// K63
-// SV005
-// Le Van C
-// 1
-// 1 1 2000
-// Da Nang
-// CNTT1
-// K62
-// SV002
-// Pham Thi D
-// 0
-// 3 3 2002
-// Hue
-// CNTT3
-// K64
-// SV004
-// Hoang Van E
-// 1
-// 2 2 2001
-// HCM
-// CNTT2
-// K63
+
+// TEST CASE 1: Kiểm tra sắp xếp và tìm sinh viên trùng ngày sinh
+// - Nhập n = 3
+// - SV 1: MaSV: 102, HoTen: Nguyen Van A, NgaySinh: 15 05 2005
+// - SV 2: MaSV: 101, HoTen: Tran Thi B,   NgaySinh: 15 05 2005
+// - SV 3: MaSV: 103, HoTen: Le Van C,     NgaySinh: 20 10 2005
+
+// => KẾT QUẢ: 
+// 1. Danh sách in ra phải đảo thứ tự 101 trước 102.
+// 2. Thông báo "Tran Thi B và Nguyen Van A trùng ngày sinh".
+
+// TEST CASE 2: Kiểm tra khi không có ai trùng ngày sinh
+// - Nhập n = 2
+// - SV 1: MaSV: A1, HoTen: Sinh Vien X, NgaySinh: 01 01 2000
+// - SV 2: MaSV: A2, HoTen: Sinh Vien Y, NgaySinh: 02 02 2000
+
+// => KẾT QUẢ: In thông báo "Khong tim thay sinh vien cung ngay sinh".
+
+// TEST CASE 3: Kiểm tra xóa toàn bộ khi tất cả đều trùng ngày sinh
+// - Nhập n = 2
+// - SV 1: MaSV: 01, HoTen: An, NgaySinh: 10 10 2005
+// - SV 2: MaSV: 02, HoTen: Binh, NgaySinh: 10 10 2005
+
+// => KẾT QUẢ: Sau khi thực hiện Câu 4, danh sách sẽ hiển thị "(Danh sach rong)".
